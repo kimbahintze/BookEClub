@@ -16,6 +16,7 @@
 		FF9B01F32204B78700DBF30E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B01F22204B78700DBF30E /* ProfileViewController.swift */; };
 		FF9B01F52204B79E00DBF30E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B01F42204B79E00DBF30E /* BooksViewController.swift */; };
 		FF9B01F72204B7A800DBF30E /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B01F62204B7A800DBF30E /* PaymentViewController.swift */; };
+		FF9B01F922063E9900DBF30E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B01F822063E9900DBF30E /* HomeViewController.swift */; };
 		FFF00BB72203B05D00B30BC0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF00BB62203B05D00B30BC0 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		FF9B01F22204B78700DBF30E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FF9B01F42204B79E00DBF30E /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		FF9B01F62204B7A800DBF30E /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		FF9B01F822063E9900DBF30E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FFF00BB62203B05D00B30BC0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 				FF9B01F22204B78700DBF30E /* ProfileViewController.swift */,
 				FF9B01F42204B79E00DBF30E /* BooksViewController.swift */,
 				FF9B01F62204B7A800DBF30E /* PaymentViewController.swift */,
+				FF9B01F822063E9900DBF30E /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				FF9B01F72204B7A800DBF30E /* PaymentViewController.swift in Sources */,
 				FF9B01ED2204B35200DBF30E /* SignUpViewController.swift in Sources */,
 				FF9B01EF2204B3D900DBF30E /* HomeScreenViewController.swift in Sources */,
+				FF9B01F922063E9900DBF30E /* HomeViewController.swift in Sources */,
 				FF9B01F32204B78700DBF30E /* ProfileViewController.swift in Sources */,
 				FFF00BB72203B05D00B30BC0 /* LoginViewController.swift in Sources */,
 				FF811D2221EE8DBC00BEA6C1 /* AppDelegate.swift in Sources */,
