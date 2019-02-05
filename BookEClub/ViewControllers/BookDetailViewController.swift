@@ -1,27 +1,19 @@
 //
-//  HomeScreenViewController.swift
+//  BookDetailViewController.swift
 //  BookEClub
 //
-//  Created by Kimba Hintze on 2/1/19.
+//  Created by Kimba Hintze on 2/5/19.
 //  Copyright © 2019 Kim Lundquist. All rights reserved.
 //
 
 import UIKit
 
-class HomeScreenViewController: UIViewController {
-    @IBOutlet weak var homeScreenPageController: UIPageControl!
-    
-    @IBAction func switchPageAction(_ sender: Any) {
-        if let pageCtrl = sender as? UIPageControl {
-        print("You are on page \(pageCtrl.currentPage)")
-    }
-    }
-    
-    
+class BookDetailViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeScreenPageController.numberOfPages = 3
-      
+
+        // Do any additional setup after loading the view.
     }
     
 
