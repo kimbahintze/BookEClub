@@ -1,14 +1,14 @@
 //
-//  HomeViewController.swift
+//  ConnectViewController.swift
 //  BookEClub
 //
-//  Created by Kimba Hintze on 2/4/19.
+//  Created by Kimba Hintze on 2/5/19.
 //  Copyright © 2019 Kim Lundquist. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UITabBarController {
+class ConnectViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
