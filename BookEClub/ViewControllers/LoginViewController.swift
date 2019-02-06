@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var loginLabel: UILabel!
