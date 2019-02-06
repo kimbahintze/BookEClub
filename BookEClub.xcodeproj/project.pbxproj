@@ -39,6 +39,7 @@
 		FF9B02002209BE7300DBF30E /* ConnectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectDetailViewController.swift; sourceTree = "<group>"; };
 		FF9B02022209BE9E00DBF30E /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		FF9B02042209BEC100DBF30E /* ChapterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDetailViewController.swift; sourceTree = "<group>"; };
+		FFC0DC18220B77B10004B3BE /* BookEClub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookEClub.entitlements; sourceTree = "<group>"; };
 		FFF00BB62203B05D00B30BC0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +59,7 @@
 			children = (
 				FF811D2021EE8DBC00BEA6C1 /* BookEClub */,
 				FF811D1F21EE8DBC00BEA6C1 /* Products */,
+				FFC0DC19220B77B60004B3BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +74,7 @@
 		FF811D2021EE8DBC00BEA6C1 /* BookEClub */ = {
 			isa = PBXGroup;
 			children = (
+				FFC0DC18220B77B10004B3BE /* BookEClub.entitlements */,
 				FF811D2521EE8DBC00BEA6C1 /* Main.storyboard */,
 				FF9B01F02204B3E800DBF30E /* ViewControllers */,
 				FF9B01F12204B40900DBF30E /* Resources */,
@@ -107,6 +110,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		FFC0DC19220B77B60004B3BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +149,14 @@
 				TargetAttributes = {
 					FF811D1D21EE8DBC00BEA6C1 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
