@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF08CE29220C5F8100E393E7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF08CE28220C5F8100E393E7 /* User.swift */; };
 		FF811D2221EE8DBC00BEA6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF811D2121EE8DBC00BEA6C1 /* AppDelegate.swift */; };
 		FF811D2721EE8DBC00BEA6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF811D2521EE8DBC00BEA6C1 /* Main.storyboard */; };
 		FF811D2921EE8DBE00BEA6C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF811D2821EE8DBE00BEA6C1 /* Assets.xcassets */; };
@@ -20,11 +21,13 @@
 		FF9B02012209BE7300DBF30E /* ConnectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B02002209BE7300DBF30E /* ConnectDetailViewController.swift */; };
 		FF9B02032209BE9E00DBF30E /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B02022209BE9E00DBF30E /* BookDetailViewController.swift */; };
 		FF9B02052209BEC100DBF30E /* ChapterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B02042209BEC100DBF30E /* ChapterDetailViewController.swift */; };
+		FFA7914722119034001ED5B8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA7914622119034001ED5B8 /* Post.swift */; };
 		FFC0DC1D220B7AF70004B3BE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC0DC1C220B7AF70004B3BE /* CloudKit.framework */; };
 		FFF00BB72203B05D00B30BC0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF00BB62203B05D00B30BC0 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF08CE28220C5F8100E393E7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FF811D1E21EE8DBC00BEA6C1 /* BookEClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookEClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF811D2121EE8DBC00BEA6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF811D2621EE8DBC00BEA6C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		FF9B02002209BE7300DBF30E /* ConnectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectDetailViewController.swift; sourceTree = "<group>"; };
 		FF9B02022209BE9E00DBF30E /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		FF9B02042209BEC100DBF30E /* ChapterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDetailViewController.swift; sourceTree = "<group>"; };
+		FFA7914622119034001ED5B8 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FFC0DC18220B77B10004B3BE /* BookEClub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookEClub.entitlements; sourceTree = "<group>"; };
 		FFC0DC1C220B7AF70004B3BE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		FFF00BB62203B05D00B30BC0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF08CE2A220C5F8D00E393E7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF08CE28220C5F8100E393E7 /* User.swift */,
+				FFA7914622119034001ED5B8 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FF811D1521EE8DBC00BEA6C1 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +92,7 @@
 			children = (
 				FFC0DC18220B77B10004B3BE /* BookEClub.entitlements */,
 				FF811D2521EE8DBC00BEA6C1 /* Main.storyboard */,
+				FF08CE2A220C5F8D00E393E7 /* Models */,
 				FF9B01F02204B3E800DBF30E /* ViewControllers */,
 				FF9B01F12204B40900DBF30E /* Resources */,
 			);
@@ -204,10 +218,12 @@
 				FF9B02012209BE7300DBF30E /* ConnectDetailViewController.swift in Sources */,
 				FF9B02052209BEC100DBF30E /* ChapterDetailViewController.swift in Sources */,
 				FF9B01ED2204B35200DBF30E /* SignUpViewController.swift in Sources */,
+				FFA7914722119034001ED5B8 /* Post.swift in Sources */,
 				FF9B01FB2208F67B00DBF30E /* HomeViewController.swift in Sources */,
 				FF9B02032209BE9E00DBF30E /* BookDetailViewController.swift in Sources */,
 				FF9B01F32204B78700DBF30E /* ProfileViewController.swift in Sources */,
 				FFF00BB72203B05D00B30BC0 /* LoginViewController.swift in Sources */,
+				FF08CE29220C5F8100E393E7 /* User.swift in Sources */,
 				FF9B01FD2209A26000DBF30E /* ConnectViewController.swift in Sources */,
 				FF811D2221EE8DBC00BEA6C1 /* AppDelegate.swift in Sources */,
 				FF9B01F52204B79E00DBF30E /* BooksViewController.swift in Sources */,

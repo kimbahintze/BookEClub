@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import CloudKit
 
 class ConnectViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let container = CKContainer.default()
+        let publicDatabase = container.publicCloudDatabase
+        let privateDatabase = container.privateCloudDatabase
+        let sharedDatabase = container.sharedCloudDatabase
         // Do any additional setup after loading the view.
     }
     
