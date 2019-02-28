@@ -42,6 +42,7 @@
                                 <rect key="frame" x="110" y="471" width="155" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
+                                    <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fwh-RX-Jaj"/>
                                     <segue destination="24x-AZ-Dvv" kind="show" id="CZa-wV-4tY"/>
                                 </connections>
                             </button>
@@ -76,9 +77,10 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="Pvb-NX-v8F" id="Jsw-Wl-PRh"/>
+                        <outlet property="loginButton" destination="QqB-XL-gaO" id="zM4-Dh-npM"/>
                         <outlet property="loginLabel" destination="tHg-Q2-4r9" id="z0I-AY-Vyu"/>
                         <outlet property="passwordTextField" destination="EVR-j3-lK7" id="e3k-Fs-uIK"/>
-                        <outlet property="signUpButtong" destination="I2G-nb-c9W" id="rhS-PY-fa5"/>
+                        <outlet property="signUpButton" destination="I2G-nb-c9W" id="rhS-PY-fa5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -119,6 +121,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvS-1m-zzO">
+                                <rect key="frame" x="241" y="582" width="112" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="User Agreement"/>
+                                <connections>
+                                    <action selector="userAgreementButtonTapped:" destination="2GQ-L9-bzE" eventType="touchUpInside" id="dpd-af-CP0"/>
+                                    <segue destination="LnP-1G-gwm" kind="presentation" id="sH1-Lw-qDn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="By signing up you agree to our" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKY-Mw-ofa">
+                                <rect key="frame" x="7" y="586" width="233" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -138,9 +156,12 @@
                         <viewLayoutGuide key="safeArea" id="7Mz-7u-bh0"/>
                     </view>
                     <connections>
+                        <outlet property="bySigningUpLabel" destination="KKY-Mw-ofa" id="4aW-CJ-C0h"/>
                         <outlet property="emailTextField" destination="oVp-Zr-pGZ" id="7P2-aI-2gd"/>
+                        <outlet property="joinButton" destination="nVY-DK-NtM" id="xDj-Sn-7AW"/>
                         <outlet property="joinLabel" destination="WeL-Ht-7ix" id="ae5-hm-WJb"/>
                         <outlet property="passwordTextField" destination="hhw-Fo-8Eq" id="8ZA-vT-NeY"/>
+                        <outlet property="userAgreeButton" destination="CvS-1m-zzO" id="fZz-wg-Dqs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmW-xF-pmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -241,13 +262,51 @@
                     <view key="view" contentMode="scaleToFill" id="F1W-jb-OhD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEj-wC-D2H">
+                                <rect key="frame" x="50" y="320" width="275" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jpI-fN-tJ5">
+                                <rect key="frame" x="50" y="376" width="275" height="241"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D6Y-Oe-gIV">
+                                <rect key="frame" x="87.5" y="95" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="SEG-Ic-oS5"/>
+                                    <constraint firstAttribute="width" constant="200" id="Tkd-cf-ISQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.52051660615913442" blue="0.69383456458599468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jpI-fN-tJ5" firstAttribute="top" secondItem="YEj-wC-D2H" secondAttribute="bottom" constant="35" id="1DO-wu-46K"/>
+                            <constraint firstItem="D6Y-Oe-gIV" firstAttribute="top" secondItem="FkD-Ds-NJX" secondAttribute="top" constant="75" id="2td-hb-3yT"/>
+                            <constraint firstItem="D6Y-Oe-gIV" firstAttribute="centerX" secondItem="F1W-jb-OhD" secondAttribute="centerX" id="5xw-my-Tju"/>
+                            <constraint firstItem="FkD-Ds-NJX" firstAttribute="trailing" secondItem="YEj-wC-D2H" secondAttribute="trailing" constant="50" id="7IC-gR-D6f"/>
+                            <constraint firstItem="jpI-fN-tJ5" firstAttribute="leading" secondItem="FkD-Ds-NJX" secondAttribute="leading" constant="50" id="Fxe-dI-5Ci"/>
+                            <constraint firstItem="FkD-Ds-NJX" firstAttribute="trailing" secondItem="jpI-fN-tJ5" secondAttribute="trailing" constant="50" id="KM8-yq-AcO"/>
+                            <constraint firstItem="FkD-Ds-NJX" firstAttribute="bottom" secondItem="jpI-fN-tJ5" secondAttribute="bottom" constant="50" id="ZiG-qO-Nsn"/>
+                            <constraint firstItem="YEj-wC-D2H" firstAttribute="leading" secondItem="FkD-Ds-NJX" secondAttribute="leading" constant="50" id="pm3-k4-qsb"/>
+                            <constraint firstItem="YEj-wC-D2H" firstAttribute="top" secondItem="D6Y-Oe-gIV" secondAttribute="bottom" constant="25" id="yom-nQ-OuK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FkD-Ds-NJX"/>
                     </view>
+                    <connections>
+                        <outlet property="projectDetailTextView" destination="jpI-fN-tJ5" id="Hbf-6b-bra"/>
+                        <outlet property="projectImageView" destination="D6Y-Oe-gIV" id="EbN-tq-pqs"/>
+                        <outlet property="projectTitleLabel" destination="YEj-wC-D2H" id="x2Y-cx-fx9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ouC-3b-wgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1025" y="1626"/>
+            <point key="canvasLocation" x="1024.8" y="1625.9370314842579"/>
         </scene>
         <!--Payment View Controller-->
         <scene sceneID="YXm-cB-9gX">
@@ -294,15 +353,41 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="projectDetailViewCell" id="smV-aH-yAU">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="projectDetailViewCell" id="smV-aH-yAU" customClass="ProjectDetailCollectionViewCell" customModule="BookEClub" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B7h-gZ-fEq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="SRb-iZ-aB2"/>
+                                                        <constraint firstAttribute="height" constant="120" id="gtQ-HT-qzc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4e-qx-1AS">
+                                                    <rect key="frame" x="0.0" y="119" width="120" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="B7h-gZ-fEq" firstAttribute="leading" secondItem="smV-aH-yAU" secondAttribute="leading" id="PCI-9c-ruo"/>
+                                            <constraint firstItem="u4e-qx-1AS" firstAttribute="leading" secondItem="smV-aH-yAU" secondAttribute="leading" id="PbC-fT-Nln"/>
+                                            <constraint firstAttribute="trailing" secondItem="B7h-gZ-fEq" secondAttribute="trailing" id="Q02-AN-aiY"/>
+                                            <constraint firstAttribute="bottom" secondItem="u4e-qx-1AS" secondAttribute="bottom" id="ipm-XM-krq"/>
+                                            <constraint firstItem="B7h-gZ-fEq" firstAttribute="top" secondItem="smV-aH-yAU" secondAttribute="top" id="sdb-CR-TMz"/>
+                                            <constraint firstAttribute="trailing" secondItem="u4e-qx-1AS" secondAttribute="trailing" id="ytT-jI-RQg"/>
+                                        </constraints>
+                                        <size key="customSize" width="120" height="140"/>
                                         <connections>
-                                            <segue destination="ZCF-dR-Ka2" kind="show" id="Scq-jH-3sc"/>
+                                            <outlet property="projectImageView" destination="B7h-gZ-fEq" id="h1X-rK-FQs"/>
+                                            <outlet property="projectTitleLabel" destination="u4e-qx-1AS" id="D5w-hk-0mu"/>
+                                            <segue destination="ZCF-dR-Ka2" kind="show" identifier="projectDetailViewCell" id="Scq-jH-3sc"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -318,10 +403,13 @@
                         <viewLayoutGuide key="safeArea" id="NUV-ID-sn8"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Connect" id="FiB-T4-Ecx"/>
+                    <connections>
+                        <outlet property="seeProjectCollectionView" destination="nBZ-Hd-Z0D" id="H7R-SW-Ixu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Em-TP-xA9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1025" y="869"/>
+            <point key="canvasLocation" x="1024.8" y="868.51574212893559"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Qbp-F3-cx3">
@@ -357,6 +445,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZ1-O3-J07" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1748" y="869"/>
+        </scene>
+        <!--User Agreement View Controller-->
+        <scene sceneID="uCo-9O-HWU">
+            <objects>
+                <viewController id="LnP-1G-gwm" customClass="UserAgreementViewController" customModule="BookEClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9nj-ZM-Doc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wY3-pS-WJ7">
+                                <rect key="frame" x="50" y="120" width="275" height="447"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">End-User License Agreement 
+
+Last updated: February 14, 2019
+
+Please read this End-User License Agreement carefully before clicking the "Sign up" button, downloading or using BookEClub.
+
+By clicking the "Sign up" button, downloading or using the Application, you are agreeing to be bound by the terms and conditions of this Agreement.
+
+If you do not agree to the terms of this Agreement, do not BookEClub click on the "Sign up" button and do not download or use the Application.
+
+License
+
+BookEClub grants you a revocable, non-exclusive, non-transferable, limited license to download, install and use the Application solely for your personal, non-commercial purposes strictly in accordance with the terms of this Agreement.
+
+Restrictions
+
+You agree not to, and you will not permit others to:
+
+a) license, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose or otherwise commercially exploit the Application or make the Application available to any third party.
+
+Other restrictions
+
+We maintain a zero-tolerance policy regarding objectionable content. Objectionable content may not be uploaded or displayed to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: sexually explicit materials; obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and gambling, including without limitation, any online casino, sports books, bingo or poker. Any user can flag content they deem objectionable for review. Content will be moderated by BookEClub to ensure the timely removal of any and all objectionable content. User accounts which have been confirmed responsible for posting objectionable content will be restricted from access to the BookEClub Service.
+
+
+Modifications to Application
+
+BookEClub reserves the right to modify, suspend or discontinue, temporarily or permanently, the Application or any service to which it connects, with or without notice and without liability to you.
+
+
+
+Term and Termination
+
+This Agreement shall remain in effect until terminated by you or BookEClub. 
+
+BookEClub may, in its sole discretion, at any time and for any or no reason, suspend or terminate this Agreement with or without prior notice.
+
+This Agreement will terminate immediately, without prior notice from BookEClub, in the event that you fail to comply with any provision of this Agreement. You may also terminate this Agreement by deleting the Application and all copies thereof from your mobile device or from your desktop.
+
+Upon termination of this Agreement, you shall cease all use of the Application and delete all copies of the Application from your mobile device or from your desktop.
+
+Severability
+
+If any provision of this Agreement is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
+
+Amendments to this Agreement
+
+BookEClub reserves the right, at its sole discretion, to modify or replace this Agreement at any time. If a revision is material we will provide at least 10 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
+
+Contact Information
+
+If you have any questions about this Agreement, please contact us.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="wY3-pS-WJ7" secondAttribute="bottom" constant="100" id="TtC-YY-Eo9"/>
+                            <constraint firstItem="wY3-pS-WJ7" firstAttribute="top" secondItem="87E-ex-Jyc" secondAttribute="top" constant="100" id="psO-zb-0e0"/>
+                            <constraint firstItem="87E-ex-Jyc" firstAttribute="trailing" secondItem="wY3-pS-WJ7" secondAttribute="trailing" constant="50" id="wyN-Dq-rVx"/>
+                            <constraint firstItem="wY3-pS-WJ7" firstAttribute="centerY" secondItem="9nj-ZM-Doc" secondAttribute="centerY" id="zTY-wG-NLe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="87E-ex-Jyc"/>
+                    </view>
+                    <connections>
+                        <outlet property="userAgreementTextView" destination="wY3-pS-WJ7" id="TP3-Zv-Vez"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tmI-ln-BSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-759" y="1234"/>
         </scene>
         <!--Books-->
         <scene sceneID="2jP-Xu-u2N">
@@ -405,10 +577,10 @@
             </objects>
             <point key="canvasLocation" x="340" y="869"/>
         </scene>
-        <!--Home View Controller-->
+        <!--HomeScreenTabBar-->
         <scene sceneID="teF-3r-NLi">
             <objects>
-                <tabBarController id="24x-AZ-Dvv" customClass="HomeViewController" customModule="BookEClub" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController title="HomeScreenTabBar" id="24x-AZ-Dvv" customClass="HomeViewController" customModule="BookEClub" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="idI-Ew-qCl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

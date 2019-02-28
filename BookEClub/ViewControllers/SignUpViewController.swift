@@ -11,12 +11,20 @@ import CloudKit
 
 class SignUpViewController: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet weak var joinLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var joinButton: UIButton!
+    @IBOutlet weak var bySigningUpLabel: UILabel!
+    @IBOutlet weak var userAgreeButton: UIButton!
+    
+    // Mark: - Actions
     @IBAction func joinButton(_ sender: Any) {
     }
     
+    @IBAction func userAgreementButtonTapped(_ sender: Any) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,4 +10,9 @@ import UIKit
 
 class ProjectDetailCollectionViewCell: UICollectionViewCell {
     
+    var post: Post?
+    
+    @IBOutlet weak var projectTitleLabel: UILabel!
+    @IBOutlet weak var projectImageView: UIImageView!
+    
 }
