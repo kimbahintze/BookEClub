@@ -10,30 +10,48 @@ import UIKit
 import CloudKit
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var loginLabel: UILabel!
     
+    // MARK: - Outlets
+    @IBOutlet weak var loginLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     
-    @IBOutlet weak var signUpButtong: UIButton!
+    // MARK: - Actions
     
     @IBAction func signUpButton(_ sender: Any) {
     }
+    
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        guard let email = emailTextField.text, !email.isEmpty else { return }
+        guard let password = passwordTextField.text, !password.isEmpty else { return }
+        
+        // figure out here to authorize it with icloud
+        
+        guard let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeScreenTabBar") else { return }
+        self.present(homeViewController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    // need a saveLogin func
+    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
-    */
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }

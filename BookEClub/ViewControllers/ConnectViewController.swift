@@ -9,7 +9,12 @@
 import UIKit
 import CloudKit
 
-class ConnectViewController: UIViewController {
+class ConnectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+
+    var posts = [Post]()
+    
+    // MARK: - Outlets
+    @IBOutlet weak var seeProjectCollectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,18 +23,43 @@ class ConnectViewController: UIViewController {
         let publicDatabase = container.publicCloudDatabase
         let privateDatabase = container.privateCloudDatabase
         let sharedDatabase = container.sharedCloudDatabase
-        // Do any additional setup after loading the view.
+        
+        seeProjectCollectionView.dataSource = self
+        seeProjectCollectionView.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return posts.count
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let projectCell = seeProjectCollectionView.dequeueReusableCell(withReuseIdentifier: "projectDetailViewCell", for: indexPath) as! ProjectDetailCollectionViewCell
+        
+        let post = posts[indexPath.row]
+        
+        projectCell.projectTitleLabel.text = post.projectTitle
+        // project pic
+       // projectCell.projectImageView. = post.projectPicURLAsString
+        return projectCell
+    }
+    
+    // need a reloadData() func
+    
+    // need a loadData() func
+    
+    
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "projectDetailViewCell" {
+            guard let destinationVC = segue.destination as?
+            ConnectDetailViewController,
+            let cell = sender as? ProjectDetailCollectionViewCell,
+                let indexPath = seeProjectCollectionView.indexPath(for: cell) else { return }
+            let post = posts[indexPath.row]
+            destinationVC.postImage = cell.projectImageView.image
+            destinationVC.post = post
+        }
+    }
 }

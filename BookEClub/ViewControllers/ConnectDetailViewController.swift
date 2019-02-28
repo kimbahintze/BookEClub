@@ -9,6 +9,16 @@
 import UIKit
 
 class ConnectDetailViewController: UIViewController {
+    
+    var post: Post?
+    var postImage: UIImage?
+    
+    // Mark: - Outlets
+    
+    @IBOutlet weak var projectImageView: UIImageView!
+    @IBOutlet weak var projectTitleLabel: UILabel!
+    @IBOutlet weak var projectDetailTextView: UITextView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

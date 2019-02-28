@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FF08CE29220C5F8100E393E7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF08CE28220C5F8100E393E7 /* User.swift */; };
+		FF1F7F352213370200D2EC3A /* UserAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7F342213370200D2EC3A /* UserAgreementViewController.swift */; };
+		FF6AC193221707C300C67B95 /* ProjectDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6AC192221707C300C67B95 /* ProjectDetailCollectionViewCell.swift */; };
 		FF811D2221EE8DBC00BEA6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF811D2121EE8DBC00BEA6C1 /* AppDelegate.swift */; };
 		FF811D2721EE8DBC00BEA6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF811D2521EE8DBC00BEA6C1 /* Main.storyboard */; };
 		FF811D2921EE8DBE00BEA6C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF811D2821EE8DBE00BEA6C1 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		FF08CE28220C5F8100E393E7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FF1F7F342213370200D2EC3A /* UserAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementViewController.swift; sourceTree = "<group>"; };
+		FF6AC192221707C300C67B95 /* ProjectDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF811D1E21EE8DBC00BEA6C1 /* BookEClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookEClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF811D2121EE8DBC00BEA6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF811D2621EE8DBC00BEA6C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				FF9B02002209BE7300DBF30E /* ConnectDetailViewController.swift */,
 				FF9B02022209BE9E00DBF30E /* BookDetailViewController.swift */,
 				FF9B02042209BEC100DBF30E /* ChapterDetailViewController.swift */,
+				FF1F7F342213370200D2EC3A /* UserAgreementViewController.swift */,
+				FF6AC192221707C300C67B95 /* ProjectDetailCollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -224,8 +230,10 @@
 				FF9B01F32204B78700DBF30E /* ProfileViewController.swift in Sources */,
 				FFF00BB72203B05D00B30BC0 /* LoginViewController.swift in Sources */,
 				FF08CE29220C5F8100E393E7 /* User.swift in Sources */,
+				FF1F7F352213370200D2EC3A /* UserAgreementViewController.swift in Sources */,
 				FF9B01FD2209A26000DBF30E /* ConnectViewController.swift in Sources */,
 				FF811D2221EE8DBC00BEA6C1 /* AppDelegate.swift in Sources */,
+				FF6AC193221707C300C67B95 /* ProjectDetailCollectionViewCell.swift in Sources */,
 				FF9B01F52204B79E00DBF30E /* BooksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

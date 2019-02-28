@@ -9,7 +9,7 @@
 import Foundation
 import CloudKit
 
-class Post {
+class Post: Equatable {
     
     static let share = Post()
     
@@ -25,18 +25,22 @@ class Post {
         sharedDB = container.sharedCloudDatabase
         
     }
-//    var projectPicURLAsString: String
-//    let userID: String
-//    var projectTitle: String
-//    var projectDetails: String
-//    let postID: String
-//    var flags: Int?
-//
-//    init(projectPicURLAsString: String, userID: String, projectTitle: String, projectDetails: String, postID: String) {
-//        self.projectPicURLAsString = projectPicURLAsString
-//        self.userID = userID
-//        self.projectTitle = projectTitle
-//        self.projectDetails = projectDetails
-//        self.postID = postID
-//    }
+    var projectPicURLAsString: String
+    let userID: String
+    var projectTitle: String
+    var projectDetails: String
+    let postID: String
+    var flags: Int?
+
+    init(projectPicURLAsString: String, userID: String, projectTitle: String, projectDetails: String, postID: String) {
+        self.projectPicURLAsString = projectPicURLAsString
+        self.userID = userID
+        self.projectTitle = projectTitle
+        self.projectDetails = projectDetails
+        self.postID = postID
+    }
+}
+
+func ==(lhs: Post, rhs: Post) -> Bool {
+    return lhs.projectPicURLAsString == rhs.projectPicURLAsString && lhs.userID == rhs.userID && lhs.projectTitle == rhs.projectTitle && lhs.projectDetails == rhs.projectDetails && lhs.postID == rhs.postID
 }
