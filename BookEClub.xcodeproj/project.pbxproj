@@ -23,6 +23,8 @@
 		FF9B02012209BE7300DBF30E /* ConnectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B02002209BE7300DBF30E /* ConnectDetailViewController.swift */; };
 		FF9B02032209BE9E00DBF30E /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B02022209BE9E00DBF30E /* BookDetailViewController.swift */; };
 		FF9B02052209BEC100DBF30E /* ChapterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B02042209BEC100DBF30E /* ChapterDetailViewController.swift */; };
+		FF9C4849222981CE00DA3E05 /* PostProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9C4848222981CE00DA3E05 /* PostProjectViewController.swift */; };
+		FF9C484B222981F100DA3E05 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9C484A222981F100DA3E05 /* ChallengeViewController.swift */; };
 		FFA7914722119034001ED5B8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA7914622119034001ED5B8 /* Post.swift */; };
 		FFC0DC1D220B7AF70004B3BE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC0DC1C220B7AF70004B3BE /* CloudKit.framework */; };
 		FFF00BB72203B05D00B30BC0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF00BB62203B05D00B30BC0 /* LoginViewController.swift */; };
@@ -47,6 +49,8 @@
 		FF9B02002209BE7300DBF30E /* ConnectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectDetailViewController.swift; sourceTree = "<group>"; };
 		FF9B02022209BE9E00DBF30E /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		FF9B02042209BEC100DBF30E /* ChapterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDetailViewController.swift; sourceTree = "<group>"; };
+		FF9C4848222981CE00DA3E05 /* PostProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProjectViewController.swift; sourceTree = "<group>"; };
+		FF9C484A222981F100DA3E05 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		FFA7914622119034001ED5B8 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FFC0DC18220B77B10004B3BE /* BookEClub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookEClub.entitlements; sourceTree = "<group>"; };
 		FFC0DC1C220B7AF70004B3BE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -118,6 +122,8 @@
 				FF9B02042209BEC100DBF30E /* ChapterDetailViewController.swift */,
 				FF1F7F342213370200D2EC3A /* UserAgreementViewController.swift */,
 				FF6AC192221707C300C67B95 /* ProjectDetailCollectionViewCell.swift */,
+				FF9C484A222981F100DA3E05 /* ChallengeViewController.swift */,
+				FF9C4848222981CE00DA3E05 /* PostProjectViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -224,8 +230,10 @@
 				FF9B02012209BE7300DBF30E /* ConnectDetailViewController.swift in Sources */,
 				FF9B02052209BEC100DBF30E /* ChapterDetailViewController.swift in Sources */,
 				FF9B01ED2204B35200DBF30E /* SignUpViewController.swift in Sources */,
+				FF9C484B222981F100DA3E05 /* ChallengeViewController.swift in Sources */,
 				FFA7914722119034001ED5B8 /* Post.swift in Sources */,
 				FF9B01FB2208F67B00DBF30E /* HomeViewController.swift in Sources */,
+				FF9C4849222981CE00DA3E05 /* PostProjectViewController.swift in Sources */,
 				FF9B02032209BE9E00DBF30E /* BookDetailViewController.swift in Sources */,
 				FF9B01F32204B78700DBF30E /* ProfileViewController.swift in Sources */,
 				FFF00BB72203B05D00B30BC0 /* LoginViewController.swift in Sources */,
