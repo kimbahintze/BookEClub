@@ -9,7 +9,15 @@
 import UIKit
 
 class ChallengeViewController: UIViewController {
-
+    
+    // MARK: - Outlets
+    @IBOutlet weak var challengeView: UIView!
+    @IBOutlet weak var challengeTextView: UITextView!
+    @IBOutlet weak var addProjectButton: UIButton!
+    
+    // MARK: - Actions
+    // if needed to add button tapped
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

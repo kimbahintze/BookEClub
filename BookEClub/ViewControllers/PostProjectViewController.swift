@@ -10,6 +10,24 @@ import UIKit
 
 class PostProjectViewController: UIViewController {
 
+    // MARK: - Outlets
+    @IBOutlet weak var projectPicImageView: UIImageView!
+    @IBOutlet weak var projectTitleTextField: UITextField!
+    @IBOutlet weak var projectDetailTextView: UITextView!
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    
+    // MARK: - Actions
+    @IBAction func cameraButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func sharedButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

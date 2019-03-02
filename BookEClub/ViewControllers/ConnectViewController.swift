@@ -18,12 +18,12 @@ class ConnectViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let container = CKContainer.default()
-        let publicDatabase = container.publicCloudDatabase
-        let privateDatabase = container.privateCloudDatabase
-        let sharedDatabase = container.sharedCloudDatabase
-        
+//
+//        let container = CKContainer.default()
+//        let publicDatabase = container.publicCloudDatabase
+//        let privateDatabase = container.privateCloudDatabase
+//        let sharedDatabase = container.sharedCloudDatabase
+//        
         seeProjectCollectionView.dataSource = self
         seeProjectCollectionView.delegate = self
     }

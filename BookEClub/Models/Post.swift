@@ -11,20 +11,18 @@ import CloudKit
 
 class Post: Equatable {
     
-    static let share = Post()
-    
-    var container: CKContainer!
-    var publicDB: CKDatabase!
-    var privateDB: CKDatabase!
-    var sharedDB: CKDatabase!
-    
-    private init() {
-        container = CKContainer.default()
-        publicDB = container.publicCloudDatabase
-        privateDB = container.privateCloudDatabase
-        sharedDB = container.sharedCloudDatabase
-        
-    }
+//    var container: CKContainer!
+//    var publicDB: CKDatabase!
+//    var privateDB: CKDatabase!
+//    var sharedDB: CKDatabase!
+//
+//    private init() {
+//        container = CKContainer.default()
+//        publicDB = container.publicCloudDatabase
+//        privateDB = container.privateCloudDatabase
+//        sharedDB = container.sharedCloudDatabase
+//    }
+//    
     var projectPicURLAsString: String
     let userID: String
     var projectTitle: String
