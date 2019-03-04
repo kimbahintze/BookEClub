@@ -27,6 +27,9 @@
 		FF9C484B222981F100DA3E05 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9C484A222981F100DA3E05 /* ChallengeViewController.swift */; };
 		FFA7914722119034001ED5B8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA7914622119034001ED5B8 /* Post.swift */; };
 		FFC0DC1D220B7AF70004B3BE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC0DC1C220B7AF70004B3BE /* CloudKit.framework */; };
+		FFE116CF222DC6F20004B722 /* BookDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE116CE222DC6F20004B722 /* BookDetailCollectionViewCell.swift */; };
+		FFE116D1222DC96F0004B722 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE116D0222DC96F0004B722 /* Book.swift */; };
+		FFE116D6222DCB3C0004B722 /* BooksMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE116D5222DCB3C0004B722 /* BooksMC.swift */; };
 		FFF00BB72203B05D00B30BC0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF00BB62203B05D00B30BC0 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		FFA7914622119034001ED5B8 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FFC0DC18220B77B10004B3BE /* BookEClub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookEClub.entitlements; sourceTree = "<group>"; };
 		FFC0DC1C220B7AF70004B3BE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		FFE116CE222DC6F20004B722 /* BookDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		FFE116D0222DC96F0004B722 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		FFE116D5222DCB3C0004B722 /* BooksMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksMC.swift; sourceTree = "<group>"; };
 		FFF00BB62203B05D00B30BC0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +80,7 @@
 			children = (
 				FF08CE28220C5F8100E393E7 /* User.swift */,
 				FFA7914622119034001ED5B8 /* Post.swift */,
+				FFE116D0222DC96F0004B722 /* Book.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,6 +108,7 @@
 				FFC0DC18220B77B10004B3BE /* BookEClub.entitlements */,
 				FF811D2521EE8DBC00BEA6C1 /* Main.storyboard */,
 				FF08CE2A220C5F8D00E393E7 /* Models */,
+				FFE116D2222DC9E30004B722 /* Model Controllers */,
 				FF9B01F02204B3E800DBF30E /* ViewControllers */,
 				FF9B01F12204B40900DBF30E /* Resources */,
 			);
@@ -124,6 +132,7 @@
 				FF6AC192221707C300C67B95 /* ProjectDetailCollectionViewCell.swift */,
 				FF9C484A222981F100DA3E05 /* ChallengeViewController.swift */,
 				FF9C4848222981CE00DA3E05 /* PostProjectViewController.swift */,
+				FFE116CE222DC6F20004B722 /* BookDetailCollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -145,6 +154,14 @@
 				FFC0DC1C220B7AF70004B3BE /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFE116D2222DC9E30004B722 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFE116D5222DCB3C0004B722 /* BooksMC.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +245,7 @@
 			files = (
 				FF9B01F72204B7A800DBF30E /* PaymentViewController.swift in Sources */,
 				FF9B02012209BE7300DBF30E /* ConnectDetailViewController.swift in Sources */,
+				FFE116D6222DCB3C0004B722 /* BooksMC.swift in Sources */,
 				FF9B02052209BEC100DBF30E /* ChapterDetailViewController.swift in Sources */,
 				FF9B01ED2204B35200DBF30E /* SignUpViewController.swift in Sources */,
 				FF9C484B222981F100DA3E05 /* ChallengeViewController.swift in Sources */,
@@ -237,9 +255,11 @@
 				FF9B02032209BE9E00DBF30E /* BookDetailViewController.swift in Sources */,
 				FF9B01F32204B78700DBF30E /* ProfileViewController.swift in Sources */,
 				FFF00BB72203B05D00B30BC0 /* LoginViewController.swift in Sources */,
+				FFE116D1222DC96F0004B722 /* Book.swift in Sources */,
 				FF08CE29220C5F8100E393E7 /* User.swift in Sources */,
 				FF1F7F352213370200D2EC3A /* UserAgreementViewController.swift in Sources */,
 				FF9B01FD2209A26000DBF30E /* ConnectViewController.swift in Sources */,
+				FFE116CF222DC6F20004B722 /* BookDetailCollectionViewCell.swift in Sources */,
 				FF811D2221EE8DBC00BEA6C1 /* AppDelegate.swift in Sources */,
 				FF6AC193221707C300C67B95 /* ProjectDetailCollectionViewCell.swift in Sources */,
 				FF9B01F52204B79E00DBF30E /* BooksViewController.swift in Sources */,
