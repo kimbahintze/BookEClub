@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CloudKit
 
 class PostProjectViewController: UIViewController {
+    
+    let database = CKContainer.default().publicCloudDatabase
 
     // MARK: - Outlets
     @IBOutlet weak var projectPicImageView: UIImageView!
@@ -23,6 +26,7 @@ class PostProjectViewController: UIViewController {
     }
     
     @IBAction func sharedButtonTapped(_ sender: Any) {
+        self.saveToCloud(projectImage: projectPicImageView, projectTitle: projectTitleTextField.text!, projectDetails: projectDetailTextView.text)
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -34,6 +38,18 @@ class PostProjectViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func saveToCloud(projectImage: UIImageView, projectTitle: String, projectDetails: String) {
+        let newProject = CKRecord(recordType: "Project")
+        newProject.setValue(projectTitle, forKey: "title")
+        newProject.setValue(projectDetails, forKey: "details")
+        newProject.setValue(projectImage, forKey: "image")
+        
+        database.save(newProject) { (record, _) in
+           
+            guard record != nil else { return }
+            print("saved project")
+        }
+    }
 
     /*
     // MARK: - Navigation
