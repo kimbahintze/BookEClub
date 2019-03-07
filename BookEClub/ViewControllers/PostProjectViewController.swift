@@ -12,6 +12,8 @@ import CloudKit
 class PostProjectViewController: UIViewController {
     
     let database = CKContainer.default().publicCloudDatabase
+    
+    var projects = [CKRecord]()
 
     // MARK: - Outlets
     @IBOutlet weak var projectPicImageView: UIImageView!
@@ -45,11 +47,14 @@ class PostProjectViewController: UIViewController {
         newProject.setValue(projectImage, forKey: "image")
         
         database.save(newProject) { (record, _) in
-           
+            // make sure to come back and finish the error handling
+
             guard record != nil else { return }
             print("saved project")
         }
     }
+    
+  
 
     /*
     // MARK: - Navigation

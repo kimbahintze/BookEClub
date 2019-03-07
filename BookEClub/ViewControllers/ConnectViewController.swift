@@ -11,19 +11,17 @@ import CloudKit
 
 class ConnectViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    let database = CKContainer.default().publicCloudDatabase
+    
     var posts = [Post]()
+    
+    var postRecords = [CKRecord]()
     
     // MARK: - Outlets
     @IBOutlet weak var seeProjectCollectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//
-//        let container = CKContainer.default()
-//        let publicDatabase = container.publicCloudDatabase
-//        let privateDatabase = container.privateCloudDatabase
-//        let sharedDatabase = container.sharedCloudDatabase
-//        
         seeProjectCollectionView.dataSource = self
         seeProjectCollectionView.delegate = self
     }
@@ -46,7 +44,17 @@ class ConnectViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     // need a reloadData() func
     
-    // need a loadData() func
+    // make sure to come back and finish the error handling
+    func queryDatabase() {
+        let query = CKQuery(recordType: "Posts", predicate: NSPredicate(value: true))
+        database.perform(query, inZoneWith: nil) { (records, _) in
+            guard let records = records else { return }
+            self.postRecords = records
+            DispatchQueue.main.async {
+                self.seeProjectCollectionView.reloadData()
+            }
+        }
+    }
     
     
     
