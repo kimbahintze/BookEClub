@@ -13,7 +13,7 @@ class ConnectViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     let database = CKContainer.default().publicCloudDatabase
     
-    var posts = [Post]()
+   // var posts = [Post]()
     
     var postRecords = [CKRecord]()
     
@@ -27,14 +27,14 @@ class ConnectViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return posts.count
+        return postRecords.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let projectCell = seeProjectCollectionView.dequeueReusableCell(withReuseIdentifier: "projectDetailViewCell", for: indexPath) as! ProjectDetailCollectionViewCell
         
-        let post = posts[indexPath.row]
+        let post = postRecords[indexPath.row].value(forKey: <#T##String#>)
         
         projectCell.projectTitleLabel.text = post.projectTitle
         // project pic
