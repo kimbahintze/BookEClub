@@ -48,7 +48,6 @@ class PostProjectViewController: UIViewController {
         
         database.save(newProject) { (record, _) in
             // make sure to come back and finish the error handling
-
             guard record != nil else { return }
             print("saved project")
         }
@@ -61,7 +60,7 @@ class PostProjectViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
+        // Get the new view controller using segue.destination
         // Pass the selected object to the new view controller.
     }
     */

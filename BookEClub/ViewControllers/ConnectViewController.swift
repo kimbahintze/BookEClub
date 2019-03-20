@@ -13,7 +13,7 @@ class ConnectViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     let database = CKContainer.default().publicCloudDatabase
     
-   // var posts = [Post]()
+    var posts = [Post]()
     
     var postRecords = [CKRecord]()
     
@@ -24,6 +24,11 @@ class ConnectViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewDidLoad()
         seeProjectCollectionView.dataSource = self
         seeProjectCollectionView.delegate = self
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to Refresh")
+        refreshControl.addTarget(self, action: #selector(queryDatabase), for: .valueChanged)
+        self.seeProjectCollectionView.refreshControl = refreshControl
+        queryDatabase()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -31,12 +36,9 @@ class ConnectViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let projectCell = seeProjectCollectionView.dequeueReusableCell(withReuseIdentifier: "projectDetailViewCell", for: indexPath) as! ProjectDetailCollectionViewCell
-        
-        let post = postRecords[indexPath.row].value(forKey: <#T##String#>)
-        
-        projectCell.projectTitleLabel.text = post.projectTitle
+        let post = postRecords[indexPath.row].value(forKey: "title") as! String
+        projectCell.projectTitleLabel.text = post
         // project pic
        // projectCell.projectImageView. = post.projectPicURLAsString
         return projectCell
@@ -45,17 +47,18 @@ class ConnectViewController: UIViewController, UICollectionViewDelegate, UIColle
     // need a reloadData() func
     
     // make sure to come back and finish the error handling
-    func queryDatabase() {
+    @objc func queryDatabase() {
         let query = CKQuery(recordType: "Posts", predicate: NSPredicate(value: true))
         database.perform(query, inZoneWith: nil) { (records, _) in
             guard let records = records else { return }
-            self.postRecords = records
+            let sortedRecords = records.sorted(by: { $0.creationDate! > $1.creationDate! })
+            self.postRecords = sortedRecords
             DispatchQueue.main.async {
+                self.seeProjectCollectionView.refreshControl?.endRefreshing()
                 self.seeProjectCollectionView.reloadData()
             }
         }
     }
-    
     
     
     // MARK: - Navigation
