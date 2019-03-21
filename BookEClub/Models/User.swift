@@ -11,54 +11,53 @@ import CloudKit
 
 class User {
     
-    static let emailKey = "email"
-    static let passwordKey = "password"
-    static let appleUserRefKey = "appleUserRef"
-    static let recordTypeKey = "User"
+    static let userTypeKey = "User"
+    fileprivate static let usernameKey = "username"
+    fileprivate static let firstNameKey = "firstName"
+    fileprivate static let appleUserRefKey = "appleUserRef"
     
-    var email: String
-    var password: String
     
-    // This is the reference to the default Apple 'Users' record ID
+    var username: String
+    var firstName: String
+
+// Mark: - CloudKit
+    var cloudKitRecordID: CKRecord.ID?
     let appleUserRef: CKRecord.Reference
-    
-    // I MAY need this when creating the kid's profile
-    // This is your CUSTOM user record's record ID
-    //var cloudKitRecordID: CKRecordID?
-    
-    init(email: String, password: String, appleUserRef: CKRecord.Reference) {
-        self.email = email
-        self.password = password
+
+    init(username: String, firstName: String, appleUserRef: CKRecord.Reference ) {
+        self.username = username
+        self.firstName = firstName
         self.appleUserRef = appleUserRef
     }
     
-    /* JUST IN CASE
- init?(cloudKitRecord: CKRecord) {
- guard let username = cloudKitRecord[User.usernameKey] as? String,
- let email = cloudKitRecord[User.emailKey] as? String,
- let appleUserRef = cloudKitRecord[User.appleUserRefKey] as? CKReference else { return nil }
- 
- self.username = username
- self.email = email
- self.appleUserRef = appleUserRef
- self.cloudKitRecordID = cloudKitRecord.recordID
- 
- }
- */
+    // CKRecord is a glorified dictionary
+    init?(ckRecord: CKRecord) {
+        guard let username = ckRecord[User.usernameKey] as? String,
+        let firstName = ckRecord[User.usernameKey] as? String,
+            let appleUserRef = ckRecord[User.appleUserRefKey] as? CKRecord.Reference else { return nil }
+        
+        self.username = username
+        self.firstName = firstName
+        self.appleUserRef = appleUserRef
+        
+        self.cloudKitRecordID = ckRecord.recordID
+    }
 }
 
-/*
- extension CKRecord {
- 
- convenience init(user: User) {
- 
- let recordID = user.cloudKitRecordID ?? CKRecordID(recordName: UUID().uuidString)
- 
- self.init(recordType: User.recordTypeKey, recordID: recordID)
- 
- self.setValue(user.username, forKey: User.usernameKey)
- self.setValue(user.email, forKey: User.emailKey)
- self.setValue(user.appleUserRef, forKey: User.appleUserRefKey)
- }
- }
- */
+// Turning a user into a CKRecord
+// we did this as an extension because we wanted to initialize User
+// we are also doing this because we want to modify
+extension CKRecord {
+    convenience init(user: User) {
+        
+        let recordID = user.cloudKitRecordID ?? CKRecord.ID(recordName: UUID().uuidString)
+        
+        self.init(recordType: User.userTypeKey, recordID: recordID)
+        self.setValue(user.username, forKey: User.usernameKey)
+        self.setValue(user.firstName, forKey: User.firstNameKey)
+        self.setValue(user.appleUserRef, forKey: User.appleUserRefKey)
+        
+        user.cloudKitRecordID = recordID
+    }
+}
+
