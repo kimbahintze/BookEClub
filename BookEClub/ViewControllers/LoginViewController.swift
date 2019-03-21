@@ -13,8 +13,8 @@ class LoginViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     
@@ -24,8 +24,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        guard let email = emailTextField.text, !email.isEmpty else { return }
-        guard let password = passwordTextField.text, !password.isEmpty else { return }
+        guard let username = usernameTextField.text, !username.isEmpty else { return }
+        guard let firstName = firstNameTextField.text, !firstName.isEmpty else { return }
         
         // figure out here to authorize it with icloud
         
@@ -41,7 +41,6 @@ class LoginViewController: UIViewController {
     
     // need a saveLogin func
     
-
 }
 
 extension LoginViewController: UITextFieldDelegate {

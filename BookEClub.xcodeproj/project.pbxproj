@@ -10,6 +10,8 @@
 		FF08CE29220C5F8100E393E7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF08CE28220C5F8100E393E7 /* User.swift */; };
 		FF1F7F352213370200D2EC3A /* UserAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7F342213370200D2EC3A /* UserAgreementViewController.swift */; };
 		FF6AC193221707C300C67B95 /* ProjectDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6AC192221707C300C67B95 /* ProjectDetailCollectionViewCell.swift */; };
+		FF778EF722439ADF00D9E939 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF778EF622439ADF00D9E939 /* CloudKitManager.swift */; };
+		FF778EF922439C2000D9E939 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF778EF822439C2000D9E939 /* UserController.swift */; };
 		FF811D2221EE8DBC00BEA6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF811D2121EE8DBC00BEA6C1 /* AppDelegate.swift */; };
 		FF811D2721EE8DBC00BEA6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF811D2521EE8DBC00BEA6C1 /* Main.storyboard */; };
 		FF811D2921EE8DBE00BEA6C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF811D2821EE8DBE00BEA6C1 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		FF08CE28220C5F8100E393E7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FF1F7F342213370200D2EC3A /* UserAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementViewController.swift; sourceTree = "<group>"; };
 		FF6AC192221707C300C67B95 /* ProjectDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		FF778EF622439ADF00D9E939 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		FF778EF822439C2000D9E939 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		FF811D1E21EE8DBC00BEA6C1 /* BookEClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookEClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF811D2121EE8DBC00BEA6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF811D2621EE8DBC00BEA6C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 		FFE116D2222DC9E30004B722 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FF778EF622439ADF00D9E939 /* CloudKitManager.swift */,
+				FF778EF822439C2000D9E939 /* UserController.swift */,
 				FFE116D5222DCB3C0004B722 /* BooksMC.swift */,
 			);
 			path = "Model Controllers";
@@ -254,8 +260,10 @@
 				FF9C4849222981CE00DA3E05 /* PostProjectViewController.swift in Sources */,
 				FF9B02032209BE9E00DBF30E /* BookDetailViewController.swift in Sources */,
 				FF9B01F32204B78700DBF30E /* ProfileViewController.swift in Sources */,
+				FF778EF722439ADF00D9E939 /* CloudKitManager.swift in Sources */,
 				FFF00BB72203B05D00B30BC0 /* LoginViewController.swift in Sources */,
 				FFE116D1222DC96F0004B722 /* Book.swift in Sources */,
+				FF778EF922439C2000D9E939 /* UserController.swift in Sources */,
 				FF08CE29220C5F8100E393E7 /* User.swift in Sources */,
 				FF1F7F352213370200D2EC3A /* UserAgreementViewController.swift in Sources */,
 				FF9B01FD2209A26000DBF30E /* ConnectViewController.swift in Sources */,
