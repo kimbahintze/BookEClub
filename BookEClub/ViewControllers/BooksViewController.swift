@@ -12,6 +12,8 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
 
     @IBOutlet weak var booksCollectionView: UICollectionView!
     
+    var books = [Books]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         booksCollectionView.delegate = self
@@ -39,15 +41,19 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     // MARK: - Navigation
 
    
+    func buttonTappedInCollectionViewCell(sender: UICollectionViewCell) {
+        self.performSegue(withIdentifier: "toBookDetailVC", sender: nil)
+    }
+    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toBookDetailVC" {
-//            guard let destinationVC = segue.destination as? BookDetailViewController, let cell = sender as? BookDetailCollectionViewCell, let indexPath = booksCollectionView.indexPath(for: cell) else { return }
-//            let post = posts[indexPath.row]
-//            destinationVC.bookImageView = cell.bookImage
-//            destinationVC.bookTitle.text = cell.bookTitle
-//
+//        if segue.identifier == "toRecycleDetailVC" {
+//            guard let destinationVC = segue.destination as? RecycleDetailViewController,
+//                let indexPath = recycleInfoTableView.indexPathForSelectedRow else { return }
+//            let materialToRecycle = materialsToRecycle[indexPath.row]
+//            destinationVC.howToRecycle = materialToRecycle
 //        }
 //    }
+    
     
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
