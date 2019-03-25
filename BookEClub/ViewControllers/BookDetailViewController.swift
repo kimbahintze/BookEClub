@@ -10,6 +10,9 @@ import UIKit
 
 class BookDetailViewController: UIViewController {
     
+    var books = [Books]()
+    var chapters = [Chapters]()
+    
     @IBOutlet weak var bookImageView: UIImageView!
     @IBOutlet weak var bookTitle: UILabel!
     
