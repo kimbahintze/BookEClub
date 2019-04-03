@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,13 +100,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVp-Zr-pGZ">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVp-Zr-pGZ">
                                 <rect key="frame" x="120" y="340.5" width="135" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhw-Fo-8Eq">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhw-Fo-8Eq">
                                 <rect key="frame" x="120" y="395.5" width="135" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -134,7 +134,7 @@
                                     <constraint firstAttribute="height" constant="60" id="2f6-d1-v8u"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVY-DK-NtM">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVY-DK-NtM">
                                 <rect key="frame" x="5" y="460.5" width="365" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5Pp-oo-aFO"/>
@@ -145,6 +145,12 @@
                                     <segue destination="24x-AZ-Dvv" kind="show" id="bbt-yL-vRh"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vMi-3K-ysw">
+                                <rect key="frame" x="120" y="279" width="135" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -154,9 +160,12 @@
                             <constraint firstItem="hhw-Fo-8Eq" firstAttribute="top" secondItem="oVp-Zr-pGZ" secondAttribute="bottom" constant="25" id="6fk-wq-Qf0"/>
                             <constraint firstItem="WeL-Ht-7ix" firstAttribute="top" secondItem="7Mz-7u-bh0" secondAttribute="top" constant="150" id="HNZ-h9-kVC"/>
                             <constraint firstItem="7Mz-7u-bh0" firstAttribute="trailing" secondItem="oVp-Zr-pGZ" secondAttribute="trailing" constant="120" id="UxL-lg-ooe"/>
-                            <constraint firstItem="oVp-Zr-pGZ" firstAttribute="top" secondItem="WeL-Ht-7ix" secondAttribute="bottom" constant="150" id="ZVW-uH-yYo"/>
+                            <constraint firstItem="7Mz-7u-bh0" firstAttribute="trailing" secondItem="vMi-3K-ysw" secondAttribute="trailing" constant="120" id="V7B-w3-Drm"/>
+                            <constraint firstItem="oVp-Zr-pGZ" firstAttribute="top" secondItem="vMi-3K-ysw" secondAttribute="bottom" constant="25" id="WZg-v9-B8M"/>
                             <constraint firstItem="hhw-Fo-8Eq" firstAttribute="leading" secondItem="7Mz-7u-bh0" secondAttribute="leading" constant="120" id="b9A-F6-LUT"/>
                             <constraint firstItem="7Mz-7u-bh0" firstAttribute="trailing" secondItem="nVY-DK-NtM" secondAttribute="trailing" constant="5" id="cUF-Ui-PF3"/>
+                            <constraint firstItem="vMi-3K-ysw" firstAttribute="centerX" secondItem="RYD-BM-iD2" secondAttribute="centerX" id="g0F-or-GIQ"/>
+                            <constraint firstItem="vMi-3K-ysw" firstAttribute="leading" secondItem="7Mz-7u-bh0" secondAttribute="leading" constant="120" id="k0K-Uq-IqV"/>
                             <constraint firstItem="oVp-Zr-pGZ" firstAttribute="leading" secondItem="7Mz-7u-bh0" secondAttribute="leading" constant="120" id="osL-ui-cz4"/>
                             <constraint firstItem="7Mz-7u-bh0" firstAttribute="trailing" secondItem="Z2m-7x-sFa" secondAttribute="trailing" constant="5" id="p0o-ZT-Sr9"/>
                             <constraint firstItem="Z2m-7x-sFa" firstAttribute="leading" secondItem="7Mz-7u-bh0" secondAttribute="leading" constant="5" id="sDU-61-94I"/>
@@ -173,6 +182,7 @@
                         <outlet property="joinLabel" destination="WeL-Ht-7ix" id="ae5-hm-WJb"/>
                         <outlet property="passwordTextField" destination="hhw-Fo-8Eq" id="8ZA-vT-NeY"/>
                         <outlet property="userAgreeButton" destination="CvS-1m-zzO" id="fZz-wg-Dqs"/>
+                        <outlet property="usernameTextField" destination="vMi-3K-ysw" id="ZUe-bu-VXx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmW-xF-pmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -205,7 +215,7 @@
                                 <rect key="frame" x="0.0" y="291" width="375" height="276"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chapterDetailCell" id="yaM-tn-sS9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chapterDetailCell" id="yaM-tn-sS9">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yaM-tn-sS9" id="7JA-cZ-gXW">
@@ -658,7 +668,7 @@ If you have any questions about this Agreement, please contact us.</string>
         <!--Books-->
         <scene sceneID="2jP-Xu-u2N">
             <objects>
-                <viewController id="zUY-qe-WM6" customClass="BooksViewController" customModule="BookEClub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Books" id="zUY-qe-WM6" customClass="BooksViewController" customModule="BookEClub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="45S-OV-Ngl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -736,7 +746,7 @@ If you have any questions about this Agreement, please contact us.</string>
         <!--HomeScreenTabBar-->
         <scene sceneID="teF-3r-NLi">
             <objects>
-                <tabBarController title="HomeScreenTabBar" id="24x-AZ-Dvv" customClass="HomeViewController" customModule="BookEClub" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Home" title="HomeScreenTabBar" id="24x-AZ-Dvv" customClass="HomeViewController" customModule="BookEClub" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="idI-Ew-qCl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
