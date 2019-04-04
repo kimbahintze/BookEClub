@@ -16,6 +16,7 @@
 		FF811D2721EE8DBC00BEA6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF811D2521EE8DBC00BEA6C1 /* Main.storyboard */; };
 		FF811D2921EE8DBE00BEA6C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF811D2821EE8DBE00BEA6C1 /* Assets.xcassets */; };
 		FF811D2C21EE8DBE00BEA6C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF811D2A21EE8DBE00BEA6C1 /* LaunchScreen.storyboard */; };
+		FF8857662256031E009653D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF8857642256031E009653D7 /* GoogleService-Info.plist */; };
 		FF9B01ED2204B35200DBF30E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B01EC2204B35200DBF30E /* SignUpViewController.swift */; };
 		FF9B01F32204B78700DBF30E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B01F22204B78700DBF30E /* ProfileViewController.swift */; };
 		FF9B01F52204B79E00DBF30E /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B01F42204B79E00DBF30E /* BooksViewController.swift */; };
@@ -48,6 +49,7 @@
 		FF811D2821EE8DBE00BEA6C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF811D2B21EE8DBE00BEA6C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF811D2D21EE8DBE00BEA6C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF8857652256031E009653D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = "Base.lproj/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF9B01EC2204B35200DBF30E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FF9B01F22204B78700DBF30E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FF9B01F42204B79E00DBF30E /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +87,6 @@
 				204B9C9A8CEB1A92CE356D03 /* Pods-BookEClub.debug.xcconfig */,
 				EE6BE015E1C217061D8047ED /* Pods-BookEClub.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -155,6 +156,7 @@
 		FF9B01F12204B40900DBF30E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FF8857642256031E009653D7 /* GoogleService-Info.plist */,
 				FF811D2D21EE8DBE00BEA6C1 /* Info.plist */,
 				FF811D2A21EE8DBE00BEA6C1 /* LaunchScreen.storyboard */,
 				FF811D2821EE8DBE00BEA6C1 /* Assets.xcassets */,
@@ -249,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF811D2C21EE8DBE00BEA6C1 /* LaunchScreen.storyboard in Resources */,
+				FF8857662256031E009653D7 /* GoogleService-Info.plist in Resources */,
 				FF811D2921EE8DBE00BEA6C1 /* Assets.xcassets in Resources */,
 				FF811D2721EE8DBC00BEA6C1 /* Main.storyboard in Resources */,
 			);
@@ -355,6 +358,14 @@
 				FF811D2B21EE8DBE00BEA6C1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FF8857642256031E009653D7 /* GoogleService-Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF8857652256031E009653D7 /* Base */,
+			);
+			name = "GoogleService-Info.plist";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -13,7 +13,7 @@ import FirebaseDatabase
 class SignUpViewController: UIViewController {
     
     var ref: DatabaseReference!
-
+    
     // MARK: - Outlets
     @IBOutlet weak var joinLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -55,20 +55,21 @@ class SignUpViewController: UIViewController {
                 return
             }
             
-        Auth.auth().createUser(withEmail: email, password: password) { (dataresult, error) in
-            if let error = error {
-                print("Error creating user: \(error.localizedDescription)")
-                return
+            Auth.auth().createUser(withEmail: email, password: password) { (dataresult, error) in
+                if let error = error {
+                    print("Error creating user: \(error.localizedDescription)")
+                    return
+                }
+                guard let uuid = Auth.auth().currentUser?.uid else { return }
+                Database.database().reference().child("users").child(uuid).setValue(["username": username, "email": email, "postID": "false"])
+                let sb = UIStoryboard(name: "Home", bundle: nil)
+                let booksVC = sb.instantiateViewController(withIdentifier: "Books")
+                self.present(booksVC, animated: true, completion: nil)
             }
-            guard let uuid = Auth.auth().currentUser?.uid else { return }
-            Database.database().reference().child("users").child(uuid).setValue(["username": username, "email": email, "postID": "false"])
-            let sb = UIStoryboard(name: "Home", bundle: nil)
-            let booksVC = sb.instantiateViewController(withIdentifier: "Books")
-            self.present(booksVC, animated: true, completion: nil)
         }
     }
-    }
-        @objc func validateForm() {
+    
+    @objc func validateForm() {
         let isFormValid = emailTextField.text?.count ?? 0 > 0 &&
             passwordTextField.text?.count ?? 0 > 0 &&
             usernameTextField.text?.count ?? 0 > 0
