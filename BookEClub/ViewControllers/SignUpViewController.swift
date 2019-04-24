@@ -23,15 +23,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var bySigningUpLabel: UILabel!
     @IBOutlet weak var userAgreeButton: UIButton!
     
-    // Mark: - Actions
-    @IBAction func joinButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    
-    @IBAction func userAgreementButtonTapped(_ sender: Any) {
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self
@@ -41,9 +32,10 @@ class SignUpViewController: UIViewController {
         passwordTextField.delegate = self
         passwordTextField.isSecureTextEntry = true
         passwordTextField.addTarget(self, action: #selector(validateForm), for: .editingChanged)
+        validateForm()
     }
     
-    func signup(_ sender: Any) {
+    func signup() {
         guard let username = usernameTextField.text, !username.isEmpty else { return }
         guard let email = emailTextField.text, !email.isEmpty else { return }
         guard let password = passwordTextField.text, !password.isEmpty else { return }
@@ -61,7 +53,9 @@ class SignUpViewController: UIViewController {
                     return
                 }
                 guard let uuid = Auth.auth().currentUser?.uid else { return }
+                
                 Database.database().reference().child("users").child(uuid).setValue(["username": username, "email": email, "postID": "false"])
+                
                 let sb = UIStoryboard(name: "Home", bundle: nil)
                 let booksVC = sb.instantiateViewController(withIdentifier: "Books")
                 self.present(booksVC, animated: true, completion: nil)
@@ -73,6 +67,7 @@ class SignUpViewController: UIViewController {
         let isFormValid = emailTextField.text?.count ?? 0 > 0 &&
             passwordTextField.text?.count ?? 0 > 0 &&
             usernameTextField.text?.count ?? 0 > 0
+        
         if isFormValid {
             joinButton.isEnabled = true
         } else {
@@ -86,6 +81,16 @@ class SignUpViewController: UIViewController {
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    // Mark: - Actions
+    @IBAction func joinButton(_ sender: Any) {
+        signup()
+    }
+    
+    // not sure if i need this
+    @IBAction func userAgreementButtonTapped(_ sender: Any) {
+    }
+    
 }
 
 extension SignUpViewController: UITextFieldDelegate {
@@ -106,6 +111,7 @@ extension SignUpViewController: UITextFieldDelegate {
         }
         return true
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }

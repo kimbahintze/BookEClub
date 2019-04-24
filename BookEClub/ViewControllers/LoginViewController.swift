@@ -27,6 +27,7 @@ class LoginViewController: UIViewController {
         usernameTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        setFonts()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -73,10 +74,7 @@ class LoginViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Try Again", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
-    @IBAction func signUpButton(_ sender: Any) {
-    }
-    
+
     // double check with mocc to see if i need to call this anywhere
     @objc func validateEmail() {
         let isFormValid = emailTextField.text?.count ?? 0 > 0 && passwordTextField.text?.count ?? 0 > 0
@@ -86,6 +84,10 @@ class LoginViewController: UIViewController {
         } else {
             loginButton.isEnabled = false
         }
+    }
+    
+    func setFonts() {
+        passwordTextField.isSecureTextEntry = true
     }
 }
 
