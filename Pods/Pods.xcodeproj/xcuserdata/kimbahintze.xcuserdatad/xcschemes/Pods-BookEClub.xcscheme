@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9E2EF45E0E9E1E6972E195C61FDED386"
+               BlueprintIdentifier = "1D6348BF1708585089F69BE1AD540A5B"
                BuildableName = "Pods_BookEClub.framework"
                BlueprintName = "Pods-BookEClub"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9E2EF45E0E9E1E6972E195C61FDED386"
+            BlueprintIdentifier = "1D6348BF1708585089F69BE1AD540A5B"
             BuildableName = "Pods_BookEClub.framework"
             BlueprintName = "Pods-BookEClub"
             ReferencedContainer = "container:Pods.xcodeproj">
