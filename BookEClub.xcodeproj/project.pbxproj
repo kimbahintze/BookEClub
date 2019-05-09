@@ -138,17 +138,17 @@
 				FF9B01EC2204B35200DBF30E /* SignUpViewController.swift */,
 				FF9B01FA2208F67B00DBF30E /* HomeViewController.swift */,
 				FF9B01F42204B79E00DBF30E /* BooksViewController.swift */,
+				FF9B02022209BE9E00DBF30E /* BookDetailViewController.swift */,
+				FFE116CE222DC6F20004B722 /* BookDetailCollectionViewCell.swift */,
+				FF9B02042209BEC100DBF30E /* ChapterDetailViewController.swift */,
+				FF9C484A222981F100DA3E05 /* ChallengeViewController.swift */,
 				FF9B01FC2209A26000DBF30E /* ConnectViewController.swift */,
 				FF9B01F22204B78700DBF30E /* ProfileViewController.swift */,
 				FF9B01F62204B7A800DBF30E /* PaymentViewController.swift */,
 				FF9B02002209BE7300DBF30E /* ConnectDetailViewController.swift */,
-				FF9B02022209BE9E00DBF30E /* BookDetailViewController.swift */,
-				FF9B02042209BEC100DBF30E /* ChapterDetailViewController.swift */,
 				FF1F7F342213370200D2EC3A /* UserAgreementViewController.swift */,
 				FF6AC192221707C300C67B95 /* ProjectDetailCollectionViewCell.swift */,
-				FF9C484A222981F100DA3E05 /* ChallengeViewController.swift */,
 				FF9C4848222981CE00DA3E05 /* PostProjectViewController.swift */,
-				FFE116CE222DC6F20004B722 /* BookDetailCollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -270,8 +270,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BookEClub/Pods-BookEClub-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -279,8 +285,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
