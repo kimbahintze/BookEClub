@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostProjectViewController: UIViewController {
+class PostProjectViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: - Outlets
     @IBOutlet weak var projectPicImageView: UIImageView!
@@ -17,6 +17,8 @@ class PostProjectViewController: UIViewController {
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    
+    let picker = UIImagePickerController()
     
     // MARK: - Actions
     @IBAction func cameraButtonTapped(_ sender: Any) {
@@ -33,6 +35,49 @@ class PostProjectViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    // Choose an image from the library
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        var selectedImageFromPicker: UIImage?
+        
+        if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            selectedImageFromPicker = editedImage
+        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            selectedImageFromPicker = originalImage
+        }
+        if let selectedImage = selectedImageFromPicker {
+            projectPicImageView.image = selectedImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func handleProjectImage() {
+        picker.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("canceled picker")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Create
+    func newPost() {
+        guard let title = projectTitleTextField.text, !title.isEmpty,
+            let details = projectDetailTextView.text, !details.isEmpty,
+            let pic = projectPicImageView.image else { return }
+        
+        if let imageData = pic.pngData() {
+            
+        }
+    }
+    
+    // Read
+    
+    // Update
+    
+    // Delete
     
 //    func saveToCloud(projectImage: UIImageView, projectTitle: String, projectDetails: String) {
 //        let newProject = CKRecord(recordType: "Project")

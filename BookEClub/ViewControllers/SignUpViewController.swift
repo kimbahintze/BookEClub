@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
     
-    var ref: DatabaseReference!
+   
     
     // MARK: - Outlets
     @IBOutlet weak var joinLabel: UILabel!
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var teamNameTF: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var joinButton: UIButton!
@@ -25,8 +26,8 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameTextField.delegate = self
-        usernameTextField.addTarget(self, action: #selector(validateForm), for: .editingChanged)
+        teamNameTF.delegate = self
+        teamNameTF.addTarget(self, action: #selector(validateForm), for: .editingChanged)
         emailTextField.delegate = self
         emailTextField.addTarget(self, action: #selector(validateForm), for: .editingChanged)
         passwordTextField.delegate = self
@@ -36,26 +37,39 @@ class SignUpViewController: UIViewController {
     }
     
     func signup() {
-        guard let username = usernameTextField.text, !username.isEmpty else { return }
+        guard let teamName = teamNameTF.text, !teamName.isEmpty else { return }
         guard let email = emailTextField.text, !email.isEmpty else { return }
         guard let password = passwordTextField.text, !password.isEmpty else { return }
         
+//        FirestoreReferenceManager.root
+//            .collection("users")
+//            .document("name")
+//            .setData(["userName": "\(username)",
+//                "email": "\(email)",
+//                "password": "\(password)"]) { (err) in
+//                if let err = err {
+//                    print(err.localizedDescription)
+//                } else {
+//                    print("Successfully added new user")
+//                }
+//        }
+//
         Auth.auth().createUser(withEmail: email, password: password) { (dataresult, error) in
             if let error = error {
                 print("Error creating user: \(error.localizedDescription)")
                 self.duplicateUser()
                 return
             }
-            
+
             Auth.auth().createUser(withEmail: email, password: password) { (dataresult, error) in
                 if let error = error {
                     print("Error creating user: \(error.localizedDescription)")
                     return
                 }
                 guard let uuid = Auth.auth().currentUser?.uid else { return }
-                
-                Database.database().reference().child("users").child(uuid).setValue(["username": username, "email": email, "postID": "false"])
-                
+
+                Database.database().reference().child("users").child(uuid).setValue(["username": teamName, "email": email, "postID": "false"])
+
                 let sb = UIStoryboard(name: "Home", bundle: nil)
                 let booksVC = sb.instantiateViewController(withIdentifier: "Books")
                 self.present(booksVC, animated: true, completion: nil)
@@ -66,7 +80,7 @@ class SignUpViewController: UIViewController {
     @objc func validateForm() {
         let isFormValid = emailTextField.text?.count ?? 0 > 0 &&
             passwordTextField.text?.count ?? 0 > 0 &&
-            usernameTextField.text?.count ?? 0 > 0
+            teamNameTF.text?.count ?? 0 > 0
         
         if isFormValid {
             joinButton.isEnabled = true
@@ -96,8 +110,8 @@ class SignUpViewController: UIViewController {
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
-        case usernameTextField:
-            usernameTextField.resignFirstResponder()
+        case teamNameTF:
+            teamNameTF.resignFirstResponder()
             emailTextField.becomeFirstResponder()
             break
         case emailTextField:

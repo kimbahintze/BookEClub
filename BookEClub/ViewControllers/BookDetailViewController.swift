@@ -11,8 +11,8 @@ import FirebaseDatabase
 
 class BookDetailViewController: UIViewController {
     
-    var books = [Books]()
-    var chapters = [Chapters]()
+    var books = [Book]()
+  //  var chapters = [Chapters]()
     
     @IBOutlet weak var bookImageView: UIImageView!
     @IBOutlet weak var bookTitle: UILabel!

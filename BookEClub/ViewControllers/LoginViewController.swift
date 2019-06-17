@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
+    
+    var users = [User]()
     
     // MARK: - Outlets
     @IBOutlet weak var loginLabel: UILabel!
@@ -34,6 +37,10 @@ class LoginViewController: UIViewController {
         usernameTextField.text = nil
         emailTextField.text = nil
         passwordTextField.text = nil
+    }
+    
+    @IBAction func signUpButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "toSignUpVC", sender: sender)
     }
     
     @IBAction func forgotPasswordButtonTapped(_ sender: Any) {

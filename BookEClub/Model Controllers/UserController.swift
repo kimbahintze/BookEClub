@@ -6,70 +6,63 @@
 //  Copyright © 2019 Kim Lundquist. All rights reserved.
 //
 
-import Foundation
+import Firebase
 
 class UserController {
     
-    static var shared = UserController()
+    // look up why I do this
+    private init() {}
     
-    var loggedInUser: User?
+    static let shared = UserController()
     
-//    func fetchCurrentUser(completion: @escaping(Bool) -> Void) {
-//        CKContainer.default().fetchUserRecordID { (appleUserRecordID, error) in
-//            if let error = error {
-//                print("Error fetching current user's apple record ID \(error)")
-//                completion(false)
-//                return
-//            }
-//            // unwrap the appleUserRecordID
-//            guard let appleUserRecordID = appleUserRecordID else { completion(false) ; return }
-//            
-//            let predicate = NSPredicate(format: "appleUserRef == %@", appleUserRecordID)
-//            
-//            CloudKitManager.shared.fetch(type: User.userTypeKey, predicate: predicate, completion: { (records, error) in
-//                if let error = error {
-//                    print("Error fetching user by appleUserRef: \(error)")
-//                    completion(false)
-//                    return
-//                }
-//                guard let records = records,
-//                let loggedInUserRecord = records.first
-//                    else { completion(false) ; return }
-//                
-//                guard let loggedInUser = User(ckRecord: loggedInUserRecord) else { completion(false) ; return }
-//                self.loggedInUser = loggedInUser
-//                completion(true)
-//            })
-//        }
-//    }
-//    
-//    func createNewUserWith(username: String, firstname: String, completion: @escaping(Bool) -> Void) {
-//        CKContainer.default().fetchUserRecordID { (appleUserRecordID, error) in
-//            if let error = error {
-//                print("There was an error fetching the current user's apple record ID: \(error) \(#function)")
-//                completion(false)
-//                return
-//            }
-//            guard let appleUserRecordID = appleUserRecordID else { completion(false) ; return }
-//            
-//            // create new CKReference to unique Apple user record ID
-//            let appleUserRef = CKRecord.Reference(recordID: appleUserRecordID, action: .deleteSelf)
-//            
-//            // create a new User model object
-//            let newUser = User(username: username, firstName: firstname, appleUserRef: appleUserRef)
-//            
-//            // turn our new user into a ckRecord
-//            let record = CKRecord(user: newUser)
-//            
-//            CloudKitManager.shared.publicDB.save(record, completionHandler: { (_, error) in
-//                if let error = error {
-//                    print("Error saving new user to the db: \(error)")
-//                    completion(false)
-//                    return
-//                }
-//                self.loggedInUser = newUser
-//                completion(true)
-//            })
-//        }
-//    }
+    private func reference(to collectionReference: FIRCollectionReference) -> CollectionReference {
+        return Firestore.firestore().collection(collectionReference.rawValue)
+    }
+    
+    // CRUD OPERATIONS
+    func create<T: Encodable>(for encodableObject: T, in collectionRefence: FIRCollectionReference) throws {
+        do {
+            let json = try encodableObject.toJson(excluding: ["id"])
+            reference(to: .users).addDocument(data: json)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func read<T: Decodable>(from collectionReference: FIRCollectionReference, returning objectType: T.Type, completion: @escaping ([T]) -> Void) {
+        
+        reference(to: .books).addSnapshotListener { (snapshot, err) in
+            if let err = err {
+                print("Error reading data \(err.localizedDescription)")
+            } else {
+                print("Data successfully read.")
+            }
+            guard let snapshot = snapshot else { return }
+            do {
+                var objects = [T]()
+                for document in snapshot.documents {
+                    let object = try document.decode(as: objectType.self)
+                    objects.append(object)
+                }
+                completion(objects)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func update() {
+       reference(to: .users).document("EPKIa2w0ml03ZpyoZzkD").setData(["email" : "michellebarrett@gmail.com" ,
+                                                                "teamName" : "We are the Barretts"]) { (err) in
+            if let err = err {
+                print("Error updating user \(err.localizedDescription)")
+            } else {
+                print("User successfully updated.")
+            }
+        }
+    }
+    
+    func delete() {
+       reference(to: .users).document("3MgqmeuNSPCxf77cp6b0").delete()
+    }
 }

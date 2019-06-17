@@ -21,7 +21,6 @@ class ConnectViewController: UIViewController, UICollectionViewDelegate, UIColle
         seeProjectCollectionView.delegate = self
         let refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to Refresh")
-    
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

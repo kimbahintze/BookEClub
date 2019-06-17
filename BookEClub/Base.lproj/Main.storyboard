@@ -28,8 +28,8 @@
                                 <rect key="frame" x="120.5" y="562" width="134" height="30"/>
                                 <state key="normal" title="Become a member!"/>
                                 <connections>
-                                    <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SKt-9f-ilG"/>
-                                    <segue destination="2GQ-L9-bzE" kind="show" identifier="toSignUpVC" id="UcS-eK-3Q0"/>
+                                    <action selector="signUpButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2V-4M-wdq"/>
+                                    <segue destination="2GQ-L9-bzE" kind="show" identifier="toSignUpVC" id="GCV-RP-14h"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BDS-lS-ZrK">
@@ -92,7 +92,7 @@
                         <outlet property="loginButton" destination="QqB-XL-gaO" id="zM4-Dh-npM"/>
                         <outlet property="loginLabel" destination="tHg-Q2-4r9" id="z0I-AY-Vyu"/>
                         <outlet property="passwordTextField" destination="EVR-j3-lK7" id="e3k-Fs-uIK"/>
-                        <outlet property="signUpButton" destination="I2G-nb-c9W" id="rhS-PY-fa5"/>
+                        <outlet property="signUpButton" destination="I2G-nb-c9W" id="HJg-Nh-JQx"/>
                         <outlet property="usernameTextField" destination="F4f-JY-NxU" id="5Aq-iO-REq"/>
                     </connections>
                 </viewController>
@@ -190,8 +190,8 @@
                         <outlet property="joinButton" destination="nVY-DK-NtM" id="xDj-Sn-7AW"/>
                         <outlet property="joinLabel" destination="WeL-Ht-7ix" id="ae5-hm-WJb"/>
                         <outlet property="passwordTextField" destination="hhw-Fo-8Eq" id="8ZA-vT-NeY"/>
+                        <outlet property="teamNameTF" destination="vMi-3K-ysw" id="ZUe-bu-VXx"/>
                         <outlet property="userAgreeButton" destination="CvS-1m-zzO" id="fZz-wg-Dqs"/>
-                        <outlet property="usernameTextField" destination="vMi-3K-ysw" id="ZUe-bu-VXx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmW-xF-pmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -699,14 +699,14 @@ If you have any questions about this Agreement, please contact us.</string>
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55j-pj-TRK">
-                                                    <rect key="frame" x="0.0" y="160" width="160" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55j-pj-TRK">
+                                                    <rect key="frame" x="0.0" y="140" width="160" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qHp-DS-WFl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qHp-DS-WFl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="140"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="140" id="lpZ-wB-tpK"/>
                                                     </constraints>
