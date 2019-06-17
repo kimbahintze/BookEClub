@@ -8,17 +8,13 @@
 
 import Foundation
 
-
-class User {
+struct User: Codable {
+    var id: String? = nil
+    let teamName : String
+    let email : String
     
-//    static let userTypeKey = "User"
-//    fileprivate static let usernameKey = "username"
-//    fileprivate static let firstNameKey = "firstName"
-//    fileprivate static let appleUserRefKey = "appleUserRef"
-//    
-//    
-//    var username: String
-//    var firstName: String
-
+    init(teamName: String, email: String) {
+        self.teamName = teamName
+        self.email = email
+    }
 }
-

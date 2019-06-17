@@ -14,25 +14,27 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
 
     @IBOutlet weak var booksCollectionView: UICollectionView!
     
-    
-    
-    var books = [Books]()
+    var books = [Book]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         booksCollectionView.delegate = self
         booksCollectionView.dataSource = self
+        
+        UserController.shared.read(from: .books, returning: Book.self) { (books) in
+            self.books = books
+        }
     }
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return BooksMC.books.count
+        return books.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = booksCollectionView.dequeueReusableCell(withReuseIdentifier: "bookDetailViewCell", for: indexPath) as! BookDetailCollectionViewCell
-        let book = BooksMC.books[indexPath.row]
-        cell.bookTitle.text = book.name
+        let book = books[indexPath.row]
+        cell.bookTitle.text = book.bookTitle
        let bookImage = UIImage(named: book.picture)
         cell.bookImage.image = bookImage
         cell.bookImage.contentMode = .scaleAspectFit

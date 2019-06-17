@@ -11,6 +11,9 @@
 		FF08CE29220C5F8100E393E7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF08CE28220C5F8100E393E7 /* User.swift */; };
 		FF1F7F352213370200D2EC3A /* UserAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1F7F342213370200D2EC3A /* UserAgreementViewController.swift */; };
 		FF6AC193221707C300C67B95 /* ProjectDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6AC192221707C300C67B95 /* ProjectDetailCollectionViewCell.swift */; };
+		FF738A3822B533710028A30A /* FIRCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF738A3722B533710028A30A /* FIRCollectionReference.swift */; };
+		FF738A3A22B539610028A30A /* EncodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF738A3922B539610028A30A /* EncodableExtensions.swift */; };
+		FF738A3C22B54B8D0028A30A /* SnapshotExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF738A3B22B54B8D0028A30A /* SnapshotExtensions.swift */; };
 		FF778EF922439C2000D9E939 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF778EF822439C2000D9E939 /* UserController.swift */; };
 		FF811D2221EE8DBC00BEA6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF811D2121EE8DBC00BEA6C1 /* AppDelegate.swift */; };
 		FF811D2721EE8DBC00BEA6C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF811D2521EE8DBC00BEA6C1 /* Main.storyboard */; };
@@ -42,6 +45,9 @@
 		FF08CE28220C5F8100E393E7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FF1F7F342213370200D2EC3A /* UserAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementViewController.swift; sourceTree = "<group>"; };
 		FF6AC192221707C300C67B95 /* ProjectDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		FF738A3722B533710028A30A /* FIRCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRCollectionReference.swift; sourceTree = "<group>"; };
+		FF738A3922B539610028A30A /* EncodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableExtensions.swift; sourceTree = "<group>"; };
+		FF738A3B22B54B8D0028A30A /* SnapshotExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotExtensions.swift; sourceTree = "<group>"; };
 		FF778EF822439C2000D9E939 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		FF811D1E21EE8DBC00BEA6C1 /* BookEClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookEClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF811D2121EE8DBC00BEA6C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +102,9 @@
 				FF08CE28220C5F8100E393E7 /* User.swift */,
 				FFA7914622119034001ED5B8 /* Post.swift */,
 				FFE116D0222DC96F0004B722 /* Book.swift */,
+				FF738A3722B533710028A30A /* FIRCollectionReference.swift */,
+				FF738A3922B539610028A30A /* EncodableExtensions.swift */,
+				FF738A3B22B54B8D0028A30A /* SnapshotExtensions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -331,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF9B01F72204B7A800DBF30E /* PaymentViewController.swift in Sources */,
+				FF738A3A22B539610028A30A /* EncodableExtensions.swift in Sources */,
 				FF9B02012209BE7300DBF30E /* ConnectDetailViewController.swift in Sources */,
 				FFE116D6222DCB3C0004B722 /* BooksMC.swift in Sources */,
 				FF9B02052209BEC100DBF30E /* ChapterDetailViewController.swift in Sources */,
@@ -348,7 +358,9 @@
 				FF1F7F352213370200D2EC3A /* UserAgreementViewController.swift in Sources */,
 				FF9B01FD2209A26000DBF30E /* ConnectViewController.swift in Sources */,
 				FFE116CF222DC6F20004B722 /* BookDetailCollectionViewCell.swift in Sources */,
+				FF738A3C22B54B8D0028A30A /* SnapshotExtensions.swift in Sources */,
 				FF811D2221EE8DBC00BEA6C1 /* AppDelegate.swift in Sources */,
+				FF738A3822B533710028A30A /* FIRCollectionReference.swift in Sources */,
 				FF6AC193221707C300C67B95 /* ProjectDetailCollectionViewCell.swift in Sources */,
 				FF9B01F52204B79E00DBF30E /* BooksViewController.swift in Sources */,
 			);
