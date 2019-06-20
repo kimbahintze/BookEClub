@@ -13,7 +13,7 @@ import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
     
-   
+    var users = [User]()
     
     // MARK: - Outlets
     @IBOutlet weak var joinLabel: UILabel!
@@ -36,44 +36,26 @@ class SignUpViewController: UIViewController {
         validateForm()
     }
     
+    // Signup
     func signup() {
         guard let teamName = teamNameTF.text, !teamName.isEmpty else { return }
         guard let email = emailTextField.text, !email.isEmpty else { return }
         guard let password = passwordTextField.text, !password.isEmpty else { return }
         
-//        FirestoreReferenceManager.root
-//            .collection("users")
-//            .document("name")
-//            .setData(["userName": "\(username)",
-//                "email": "\(email)",
-//                "password": "\(password)"]) { (err) in
-//                if let err = err {
-//                    print(err.localizedDescription)
-//                } else {
-//                    print("Successfully added new user")
-//                }
-//        }
-//
         Auth.auth().createUser(withEmail: email, password: password) { (dataresult, error) in
             if let error = error {
                 print("Error creating user: \(error.localizedDescription)")
                 self.duplicateUser()
                 return
             }
-
-            Auth.auth().createUser(withEmail: email, password: password) { (dataresult, error) in
-                if let error = error {
-                    print("Error creating user: \(error.localizedDescription)")
-                    return
-                }
-                guard let uuid = Auth.auth().currentUser?.uid else { return }
-
-                Database.database().reference().child("users").child(uuid).setValue(["username": teamName, "email": email, "postID": "false"])
-
-                let sb = UIStoryboard(name: "Home", bundle: nil)
-                let booksVC = sb.instantiateViewController(withIdentifier: "Books")
-                self.present(booksVC, animated: true, completion: nil)
-            }
+            guard let user = Auth.auth().currentUser?.uid else { return }
+            
+            print("\(user) created")
+//            Database.database().reference().child("users").child(uuid).setValue(["teamName": teamName, "email": email, "postID": "false"])
+            
+            let sb = UIStoryboard(name: "Home", bundle: nil)
+            let booksVC = sb.instantiateViewController(withIdentifier: "Books")
+            self.present(booksVC, animated: true, completion: nil)
         }
     }
     

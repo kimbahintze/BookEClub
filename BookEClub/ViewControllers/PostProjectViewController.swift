@@ -68,7 +68,7 @@ class PostProjectViewController: UIViewController, UIImagePickerControllerDelega
             let details = projectDetailTextView.text, !details.isEmpty,
             let pic = projectPicImageView.image else { return }
         
-        if let imageData = pic.pngData() {
+        if let _ = pic.pngData() {
             
         }
     }

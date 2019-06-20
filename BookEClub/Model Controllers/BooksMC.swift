@@ -8,10 +8,18 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestore
 
 class BooksMC {
     
- //   static var shared = BooksMC()
+    private init() {}
+    static let shared = BooksMC()
+    
+    let bookRef = Firestore.firestore().collection("books")
+    
+    func addBook() {
+       
+    }
     
 //    var firestore: Firestore { get }
     

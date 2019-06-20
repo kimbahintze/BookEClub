@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct User: Codable {
+protocol Identifiable {
+    var id: String? { get set }
+}
+
+struct User: Codable, Identifiable {
     var id: String? = nil
     let teamName : String
     let email : String
