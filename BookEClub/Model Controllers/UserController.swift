@@ -20,10 +20,10 @@ class UserController {
     }
     
     // CRUD OPERATIONS
-    func create<T: Encodable>(for encodableObject: T, in collectionRefence: FIRCollectionReference) throws {
+   func create<T: Encodable>(for encodableObject: T, in collectionReference: FIRCollectionReference) {
         do {
             let json = try encodableObject.toJson(excluding: ["id"])
-            reference(to: .users).addDocument(data: json)
+            reference(to: collectionReference).addDocument(data: json)
         } catch {
             print(error.localizedDescription)
         }
@@ -31,7 +31,7 @@ class UserController {
     
     func read<T: Decodable>(from collectionReference: FIRCollectionReference, returning objectType: T.Type, completion: @escaping ([T]) -> Void) {
         
-        reference(to: .books).addSnapshotListener { (snapshot, err) in
+        reference(to: collectionReference).addSnapshotListener { (snapshot, err) in
             if let err = err {
                 print("Error reading data \(err.localizedDescription)")
             } else {
@@ -51,18 +51,23 @@ class UserController {
         }
     }
     
-    func update() {
-       reference(to: .users).document("EPKIa2w0ml03ZpyoZzkD").setData(["email" : "michellebarrett@gmail.com" ,
-                                                                "teamName" : "We are the Barretts"]) { (err) in
-            if let err = err {
-                print("Error updating user \(err.localizedDescription)")
-            } else {
-                print("User successfully updated.")
-            }
+    func update<T: Encodable & Identifiable>(for encodableObject: T, in collectionReference: FIRCollectionReference) {
+        do {
+            let json = try encodableObject.toJson(excluding: ["id"])
+            guard let id = encodableObject.id else { throw MyError.encodingError }
+            reference(to: collectionReference).document(id).setData(json)
+            
+        } catch {
+            print("Error updating user \(error.localizedDescription)")
         }
     }
     
-    func delete() {
-       reference(to: .users).document("3MgqmeuNSPCxf77cp6b0").delete()
+    func delete<T: Identifiable>(_ identifiableObject: T, collectionReference: FIRCollectionReference) {
+        do {
+            guard let id = identifiableObject.id else { throw MyError.encodingError }
+            reference(to: collectionReference).document(id).delete()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
